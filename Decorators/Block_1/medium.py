@@ -18,7 +18,10 @@ try:
 except:
     print("Ошибка т.к. не переданы все обязательные аргументы (и в них не заданы значения по умолчанию)")
 
-print(test_func(arg_1=1, arg_2=2, arg_3=3, arg_4=4))
+try:
+    print(test_func(1, 2, 3, 4, arg_1=1, arg_2=2, arg_3=3, arg_4=4))
+except:
+    print("Unexpected argument")
 
 numbers = (1, 2, 3, 4, 5, 6, 7)
 print(test_func(*numbers))
