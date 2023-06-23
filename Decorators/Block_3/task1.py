@@ -1,8 +1,14 @@
-def dec(text: str):
-    print(text)
-    def func(a: int, b: int):
-        return a + b
-    return func
+def func(a, b):
+    return a + b
 
-test = dec("Покупайте наших котиков!")
+
+def dec(func, text: str):
+    def another_func(*args, **kwargs):
+        print(text)
+        return func(*args, **kwargs)
+
+    return another_func
+
+
+test = dec(func, "Покупайте наших котиков!")
 print(test(1, 2))
